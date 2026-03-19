@@ -8,8 +8,8 @@ export function proxy(request: NextRequest) {
     const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
     // ВСТАВЬ СВОИ ССЫЛКИ ЗДЕСЬ
-    const ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.yoldosh.android';
-    const IOS_URL = 'https://apps.apple.com/uz/app/yoldosh/id6754510387';
+    const ANDROID_URL = 'https://redirect.appmetrica.yandex.com/serve/173876829097132884';
+    const IOS_URL = 'https://redirect.appmetrica.yandex.com/serve/173876829097132884';
 
     if (isAndroid) {
         return NextResponse.redirect(ANDROID_URL);
