@@ -7,9 +7,10 @@ export function proxy(request: NextRequest) {
     const isAndroid = /Android/i.test(ua);
     const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
-    // ВСТАВЬ СВОИ ССЫЛКИ ЗДЕСЬ
-    const ANDROID_URL = 'https://redirect.appmetrica.yandex.com/serve/173876829097132884';
+    // ВСТАВЬ СВОИ ССЫЛКИ
+    const ANDROID_URL = 'https://redirect.appmetrica.yandex.com/serve/317992046667305463';
     const IOS_URL = 'https://redirect.appmetrica.yandex.com/serve/173876829097132884';
+    const DESKTOP_URL = 'https://yoldosh.uz';
 
     if (isAndroid) {
         return NextResponse.redirect(ANDROID_URL);
@@ -19,11 +20,10 @@ export function proxy(request: NextRequest) {
         return NextResponse.redirect(IOS_URL);
     }
 
-    // Если ПК — показываем страницу
-    return NextResponse.next();
+    // ПК / Mac → сюда
+    return NextResponse.redirect(DESKTOP_URL);
 }
 
-// Ограничиваем только на нужный route (например "/")
 export const config = {
     matcher: '/',
 };
