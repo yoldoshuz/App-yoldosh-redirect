@@ -10,7 +10,7 @@ export function proxy(request: NextRequest) {
     // ВСТАВЬ СВОИ ССЫЛКИ
     const ANDROID_URL = 'https://redirect.appmetrica.yandex.com/serve/317992046667305463';
     const IOS_URL = 'https://redirect.appmetrica.yandex.com/serve/173876829097132884';
-    const DESKTOP_URL = 'https://yoldosh.uz';
+    const DESKTOP_URL = 'https://yoldosh.uz/uz';
 
     if (isAndroid) {
         return NextResponse.redirect(ANDROID_URL);
